@@ -1,0 +1,112 @@
+Metadata-Version: 2.4
+Name: mtg-mcp-server
+Version: 0.1.0
+Summary: MCP server providing tools to interact with the Magic the Gathering API
+Author: MTG MCP Server Team
+License: MIT
+Project-URL: Homepage, https://github.com/mtg-mcp-server/mtg-mcp-server
+Project-URL: Repository, https://github.com/mtg-mcp-server/mtg-mcp-server
+Project-URL: Issues, https://github.com/mtg-mcp-server/mtg-mcp-server/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: mcp>=1.0.0
+Requires-Dist: httpx>=0.25.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: asyncio-throttle>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-mock>=3.10.0; extra == "dev"
+Requires-Dist: respx>=0.20.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: isort>=5.12.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+
+# MTG MCP Server
+
+A Model Context Protocol (MCP) server that provides tools to interact with the Magic the Gathering API.
+
+## Features
+
+- Search for MTG cards by name with partial matching
+- Filter cards by various attributes (color, type, mana cost, etc.)
+- Retrieve detailed card information
+- Get information about MTG sets
+- Discover random cards
+
+## Installation
+
+### Development Setup
+
+1. Create and activate a virtual environment:
+
+```bash
+python -m venv mtg-mcp-env
+source mtg-mcp-env/bin/activate  # On Windows: mtg-mcp-env\Scripts\activate
+```
+
+2. Install the package in development mode:
+
+```bash
+pip install -e ".[dev]"
+```
+
+## Usage
+
+### As an MCP Server
+
+The server can be used with any MCP-compatible client. Add the following to your MCP client configuration:
+
+```json
+{
+  "mcpServers": {
+    "mtg-mcp-server": {
+      "command": "mtg-mcp-server",
+      "args": []
+    }
+  }
+}
+```
+
+### Available Tools
+
+- `search_cards`: Search for cards by name
+- `get_card_details`: Get detailed information for a specific card
+- `filter_cards`: Filter cards by attributes
+- `get_sets`: Retrieve MTG set information
+- `get_random_cards`: Get random cards for discovery
+
+## Development
+
+### Running Tests
+
+```bash
+pytest
+```
+
+### Code Formatting
+
+```bash
+black mtg_mcp_server tests
+isort mtg_mcp_server tests
+```
+
+### Type Checking
+
+```bash
+mypy mtg_mcp_server
+```
+
+## License
+
+MIT License

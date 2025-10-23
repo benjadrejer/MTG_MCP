@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "mtg-mcp-server-option-a": {
+      "comment": "Option A: Using installed command (recommended)",
+      "command": "mtg-mcp-server",
+      "args": [],
+      "disabled": false,
+      "autoApprove": ["search_cards"]
+    },
+    "mtg-mcp-server-option-b": {
+      "comment": "Option B: Using Python module directly",
+      "command": "python",
+      "args": ["-m", "mtg_mcp_server.main"],
+      "env": {
+        "PYTHONPATH": "/path/to/mtg-mcp-server"
+      },
+      "disabled": true,
+      "autoApprove": ["search_cards"]
+    },
+    "mtg-mcp-server-option-c": {
+      "comment": "Option C: Using full path to Python executable",
+      "command": "/path/to/your/venv/Scripts/python.exe",
+      "args": ["-m", "mtg_mcp_server.main"],
+      "cwd": "/path/to/mtg-mcp-server",
+      "disabled": true,
+      "autoApprove": ["search_cards"]
+    },
+    "mtg-mcp-server-debug": {
+      "comment": "Debug version with detailed logging",
+      "command": "mtg-mcp-server",
+      "args": [],
+      "env": {
+        "LOG_LEVEL": "DEBUG"
+      },
+      "disabled": true,
+      "autoApprove": ["search_cards"]
+    }
+  }
+}

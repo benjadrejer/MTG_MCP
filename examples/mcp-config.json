@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mtg-mcp-server": {
+      "command": "mtg-mcp-server",
+      "args": [],
+      "env": {
+        "LOG_LEVEL": "INFO"
+      },
+      "disabled": false,
+      "autoApprove": ["search_cards"]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+[console_scripts]
+mtg-mcp-server = mtg_mcp_server.main:cli_main
