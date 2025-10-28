@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "mtg-mcp-server": {
+      "command": "./mtg-mcp-env/bin/python",
+      "args": ["-m", "mtg_mcp_server.main"],
+      "env": {},
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
